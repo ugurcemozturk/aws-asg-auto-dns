@@ -13,6 +13,7 @@ You have to edit `variables.tfvars`, especially the ones with `your-###` such as
 - An Auto Scaling Group with 2 desired instances with the launch template defined below
 - A launch template with the most recent Amazon Linux 2 AMI; `amzn2-ami-hvm*`
 - 2 scaling policy and cloudwatch alarms that trigger based on networkOut metric of the ASG instances.
+- 2 CloudWatch log groups for lambdas with 30 days of retention
 - A security group with one TCP ingress, the ingress port defined as a terraform variable.
 - 2 Lambda functions to register and deregister DNS
 - 2 SNS topics to trigger register and deregister Lamdas
@@ -23,4 +24,5 @@ You have to edit `variables.tfvars`, especially the ones with `your-###` such as
 - [ ] Replace Admin level policy
 - [ ] Estimated cost
 - [ ] Add architecture diagram
-- [ ] Lamda layers
+- [ ] Lamda layers-
+- [ ] Add license

@@ -1,8 +1,22 @@
+## It's highly recommended to use AWS managed or custom load balancer. This implementation relies on the Route53 MultiValueAnswer policy.
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+
+- [Description](#description)
+  - [Best practice?](#best-practice)
+  - [Requirements](#requirements)
+  - [What's being provisioned?](#whats-being-provisioned)
+  - [Todo](#todo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Description
 
 This terraform template creates an AWS **Auto Scaling Group** with network based **scaling policy** and their **CloudWatch alarms** among with auto DNS updates on instance start and terminate by sending notifications from **Auto Scaling Group lifecycle hooks** to **SNS**. This SNS notifications trigger python based **lambda functions** to update your DNS entities hosted in **Route53**
 
-## It's highly recommended to use AWS managed or custom load balancer. This implementation relies on the Route53 MultiValueAnswer policy.
+## Best practice?
 This implementation may cover your needs when you cannot work with a load balancer due to specific network protocols or such. It applies DNS round-robin by using Route53 MultiValueAnswer policy.
 
 ## Requirements
